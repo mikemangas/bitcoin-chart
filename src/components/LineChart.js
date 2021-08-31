@@ -1,8 +1,8 @@
 import { Line } from "react-chartjs-2";
 import { useEffect, useState } from "react";
-import API_KEY from "./api.js";
 
 export default function LineChart({ toDay, todayMinusTen }) {
+  const API_KEY = "d243749c51db1d292f6854e14d68e1f162cb5686";
   const [bitcoinData, setBitcoinData] = useState([]);
   useEffect(() => {
     fetch(
