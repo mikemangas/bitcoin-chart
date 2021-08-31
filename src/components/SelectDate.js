@@ -9,10 +9,14 @@ export default function SelectDate({ toDay, todayMinusTen }) {
   );
   tenDaysAgo = new Date(tenDaysAgo).toISOString().split("T")[0];
 
-  useEffect(() => {
+  function setDays() {
     todayMinusTen(tenDaysAgo);
     toDay(today);
-  }, [toDay, todayMinusTen, tenDaysAgo, today]);
+  }
+
+  useEffect(() => {
+    setDays();
+  }, []);
 
   function handleOnSubmit(e) {
     e.preventDefault();

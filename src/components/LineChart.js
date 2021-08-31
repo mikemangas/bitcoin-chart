@@ -18,7 +18,7 @@ export default function LineChart({ toDay, todayMinusTen }) {
     <div>
       <Line
         data={{
-          labels: bitcoinData.map((date) => date?.timestamp),
+          labels: bitcoinData.map((date) => date?.timestamp.split("T")[0]),
           datasets: [
             {
               label: "USD/BITCOIN",
