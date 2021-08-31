@@ -1,11 +1,12 @@
 import { Line } from "react-chartjs-2";
 import { useEffect, useState } from "react";
+import API_KEY from "./api.js";
+
 export default function LineChart({ toDay, todayMinusTen }) {
   const [bitcoinData, setBitcoinData] = useState([]);
-
   useEffect(() => {
     fetch(
-      `https://api.nomics.com/v1/exchange-rates/history?key=d243749c51db1d292f6854e14d68e1f162cb5686&currency=BTC&start=${todayMinusTen}T00%3A00%3A00Z&end=${toDay}T00%3A00%3A00Z`
+      `https://api.nomics.com/v1/exchange-rates/history?key=${API_KEY}&currency=BTC&start=${todayMinusTen}T00%3A00%3A00Z&end=${toDay}T00%3A00%3A00Z`
     )
       .then((response) => response.json())
       .then((data) => {
