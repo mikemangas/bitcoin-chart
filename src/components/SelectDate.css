@@ -1,0 +1,16 @@
+.SelectDate__form {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.SelectDate__form__submitButton {
+  padding: 10px;
+}
+
+.SelectDate__form__date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-
+import "./SelectDate.css";
 export default function SelectDate({ toDay, todayMinusTen }) {
   let today = new Date();
   today = today.toISOString().split("T")[0];
@@ -29,16 +29,27 @@ export default function SelectDate({ toDay, todayMinusTen }) {
 
   return (
     <form className="SelectDate__form" onSubmit={handleOnSubmit}>
-      <label htmlFor="dateFrom">From</label>
-      <input
-        type="date"
-        id="dateFrom"
-        name="dateFrom"
-        defaultValue={tenDaysAgo}
-      />
-      <label htmlFor="dateUntil">Until</label>
-      <input type="date" id="dateUntil" name="dateUntil" defaultValue={today} />
-      <button type="submit">RENDER</button>
+      <div className="SelectDate__form__date">
+        <label htmlFor="dateFrom">From</label>
+        <input
+          type="date"
+          id="dateFrom"
+          name="dateFrom"
+          defaultValue={tenDaysAgo}
+        />
+      </div>
+      <div className="SelectDate__form__date">
+        <label htmlFor="dateUntil">Until</label>
+        <input
+          type="date"
+          id="dateUntil"
+          name="dateUntil"
+          defaultValue={today}
+        />
+      </div>
+      <button className="SelectDate__form__submitButton" type="submit">
+        RENDER
+      </button>
     </form>
   );
 }
